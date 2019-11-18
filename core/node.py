@@ -57,11 +57,17 @@ def create_node(config, name, p2p_ip, public_ip, port):
 
 
 def init(disk_mountpoint, test_mode, sgx_server_url):
-    env_params = {
-        **env_settings,
-        'DISK_MOUNTPOINT': disk_mountpoint,
-        'SGX_SERVER_URL': sgx_server_url,
-    }
+    if sgx_server_url:
+        env_params = {
+            **env_settings,
+            'DISK_MOUNTPOINT': disk_mountpoint,
+            'SGX_SERVER_URL': sgx_server_url,
+        }
+    else:
+        env_params = {
+            **env_settings,
+            'DISK_MOUNTPOINT': disk_mountpoint,
+        }
     if not env_params.get('DB_ROOT_PASSWORD'):
         env_params['DB_ROOT_PASSWORD'] = env_params['DB_PASSWORD']
 

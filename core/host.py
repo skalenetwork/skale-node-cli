@@ -92,7 +92,8 @@ def fix_url(url):
 def prepare_host(test_mode, disk_mountpoint, sgx_server_url):
     logger.info(f'Preparing host started, disk_mountpoint: {disk_mountpoint}')
     save_disk_mountpoint(disk_mountpoint)
-    save_sgx_server_url(sgx_server_url)
+    if sgx_server_url:
+        save_sgx_server_url(sgx_server_url)
     save_resource_allocation_config()
     if not test_mode:
         init_convoy(disk_mountpoint)

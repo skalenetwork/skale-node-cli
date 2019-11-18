@@ -132,7 +132,6 @@ def register_node(name, ip, port):
 )
 @click.option(
     '--sgx-url',
-    prompt="Enter URL of sgx server",
     help='URL of sgx server endpoint'
 )
 @local_only
