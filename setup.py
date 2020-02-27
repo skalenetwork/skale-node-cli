@@ -59,9 +59,10 @@ setup(
         "texttable==1.6.2",
         "python-dateutil==2.8.1",
         "Jinja2==2.10.3",
-        "skale-py==2.0b0",
+        "skale.py==2.1b4",
         "psutil==5.6.5",
         "pycryptodome==3.9.2",
+        "python-iptables==0.14.0",
         "python-dotenv==0.10.3",
         "terminaltables==3.1.0"
     ],

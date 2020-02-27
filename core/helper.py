@@ -174,18 +174,6 @@ def get_file_handler(log_filepath, log_level):
     return f_handler
 
 
-def load_ssl_files(key_path, cert_path):
-    return {
-        'ssl_key': (os.path.basename(key_path), read_file(key_path), 'application/octet-stream'),
-        'ssl_cert': (os.path.basename(cert_path), read_file(cert_path), 'application/octet-stream')
-    }
-
-
-def read_file(path, mode='rb'):
-    with open(path, mode) as f:
-        return f
-
-
 def upload_certs(key_path, cert_path, force):
     with open(key_path, 'rb') as key_file, open(cert_path, 'rb') as cert_file:
         files_data = {

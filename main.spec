@@ -17,7 +17,7 @@ a = Analysis(
        ("./datafiles/update.sh", "data/datafiles"),
        ("./datafiles/helper.sh", "data/datafiles"),
     ],
-    hiddenimports=[],
+    hiddenimports=['libxtwrapper', 'eth_hash.backends.pysha3'],
     hookspath=[],
     runtime_hooks=[],
     excludes=[],
