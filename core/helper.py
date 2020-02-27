@@ -115,6 +115,8 @@ def post(url_name, json=None, files=None):
     response = post_request(url, json=json, files=files)
     if response is None:
         return None
+    if response.status_code == 500:
+        return {'errors': ['Internal server error']}
     return response.json()
 
 
